@@ -1,0 +1,28 @@
+{% extends "main/layout.html" %}
+
+{% block content %}
+
+  {% if form.errors %}
+    <p>Не удалось войти в профиль. Пожалуйста, проверьте корректность ввода пароля.</p>
+  {% endif %}
+  
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <table>
+      <tr>
+        <td>Имя:</td>
+        <td>{{ form.username }}</td>
+      </tr>
+      <tr>
+        <td>Пароль:</td>
+        <td>{{ form.password }}</td>
+      </tr>
+    </table>
+    <input type="submit" class="submit-button" value="Войти" />
+    <input type="hidden" name="next" value="{{ next }}" />
+  </form>
+  
+  {# Assumes you setup the password_reset view in your URLconf #}
+  <p><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
+  
+{% endblock %}

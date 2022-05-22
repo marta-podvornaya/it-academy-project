@@ -1,0 +1,9 @@
+{% extends "main/layout.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<p>Добро пожаловать!</p>
+{% else %}
+<p>Пожалуйста, войдите в систему для просмотра профиля.</p>
+{% endif %}
+{% endblock %}

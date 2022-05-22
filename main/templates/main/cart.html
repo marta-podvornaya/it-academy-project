@@ -1,0 +1,29 @@
+{% extends 'main/layout.html'%}
+
+{% block content %}
+
+<div class="box-element">
+    <div class="cart-row">
+        <div style="flex:2"></div>
+        <div style="flex:2"><strong>Товар</strong></div>
+        <div style="flex:1"><strong>Цена</strong></div>
+        <div style="flex:1"><strong>Количество</strong></div>
+        <div style="flex:1"><strong>Общая стоимость</strong></div>
+    </div>
+    <hr>
+    {% for item in items %}
+    <div class="cart-row">
+        <div style="flex:2"><img class="row-image" src="{{ item.item.image.url }}"></div>
+        <div style="flex:2"><strong>{{ item.item.name|capfirst }}</strong></div>
+        <div style="flex:1"><strong>{{item.item.price}} BYN</strong></div>
+        <div style="flex:1; display:flex; align-items: baseline;" class="quantity">
+            <p style="font-size:20px;"><strong>{{ item.quantity }}</strong></p>
+            <button data-product="{{item.item.code}}" data-action="add" class="btn btn-light update-cart" style="font-size:20px;">+</button>
+            <button data-product="{{item.item.code}}" data-action="remove" class="btn btn-light update-cart" style="font-size:20px;">- </button>
+        </div>
+        <div style="flex:1">{{item.get_total}} BYN</div>
+    </div>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock content %}

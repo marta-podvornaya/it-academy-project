@@ -1,0 +1,43 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<div class = 'row'>
+        {% for item in items %}
+    <div class = 'col-lg-4'>
+        <div class = 'box-element product'>
+            <div>
+                <img width="100%" src="{{ item.image.url }}" class = 'item-img'>
+                <h6 style="font-size: 23px; font-family:Verdana,sans-serif; padding: 10px 0px"><strong>{{ item.name|capfirst }}</strong></h6>
+                <h4 style="display: inline-block; float: right"><strong>{{item.price}} BYN</strong></h4>
+                <button data-product={{item.code}} data-action="add" class="btn btn-dark update-cart">В корзину</button>
+		        <a class="btn btn-dark" href="{% url 'item' item.code %}">Детали</a>
+                <hr>
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+</div>
+<hr style="border: 10px solid white;">
+<div class="about-faq">
+    <h3>О нас</h3>
+    <p>Мы онлайн магазин по продаже товаров с Hello Kitty.</p>
+    <hr width="1500 px">
+    <h3 style="padding: 5px 0px">Часто задаваемые вопросы</h3>
+    <h5>1. Как оплатить заказ?</h5>
+    <p>Заказ оплачивается наличными при получении.</p>
+    <h5>2. Как получить заказ?</h5>
+    <p>После оформления заказа с Вами свяжется оператор. На данный момент доступен только самовывоз с точки, которую Вам сообщит оператор при подтверждении заказа.</p>
+    <h5>3. Можно ли вернуть товар?</h5>
+    <p> К сожалению, товар обмену и возврату не подлежит.</p>
+    <hr>
+    {% block form %}
+    <h5>Остались вопросы?</h5>
+    <p>Задайте Ваш вопрос через форму ниже, оставив свой адрес электронной почты. В течение рабочего дня после отправки запроса наш оператор пришлет Вам ответ на указанный Вами адрес.</p>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit" class="submit-button">Отправить</button>
+    </form>
+    {% endblock form %}
+</div>
+{% endblock content %}

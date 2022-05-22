@@ -1,0 +1,96 @@
+#wrap {
+    margin: 0 auto;
+    width: 1500px;
+}
+
+.top-navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    background-color: #f1b1f2;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navigation-logo {
+    background-color: #f1b1f2;
+    padding-right: 50px;
+}
+.navigation-links {
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.reg-log-btn-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login-button {
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-weight: 900;
+    font-stretch: ;
+    font-size: 15px;
+    font-family: "Avenir Black";
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+    border-radius: 50px;
+}
+
+
+
+.socials-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f1b1f2;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.social-icon {
+    padding-left: 30px;
+    padding-right: 30px;
+    box-sizing: content-box;
+}
